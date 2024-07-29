@@ -1,0 +1,26 @@
+{
+  "name": "feeling-giffy",
+  "version": "1.0.0",
+  "description": "The web app will provide users with gifs based on a fun twist of their inputs. ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gif",
+    "funny",
+    "lucky",
+    "twist"
+  ],
+  "author": "Madhav Murthy",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
+  }
+}
