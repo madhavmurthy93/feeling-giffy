@@ -19,18 +19,25 @@
                 <option value="cat" <%= locals.character === 'cat' ? 'selected' : '' %>>Cat</option>
                 <option value="dog" <%= locals.character === 'dog' ? 'selected' : '' %>>Dog</option>
                 <option value="baby" <%= locals.character === 'baby' ? 'selected' : '' %>>Baby</option>
-                <option value="homer <%= locals.character === 'homer' ? 'selected' : '' %>">Homer</option>
+                <option value="homer" <%= locals.character === 'homer' ? 'selected' : '' %>>Homer</option>
             </select>
             <button class="btn btn-outline-dark" id="search" type="button" value="Search">Search</button>
         </div>
     </div>
 </div>
-<% locals.gifs.data.forEach(gif => { %>
+<% for (let i = 0; i < locals.gifs.data.length; i++) { %>
+<%  let gif = gifs.data[i] %>
+<%  let start = (i % 3 === 0); %>
+<%  let end = (i % 3 === 2); %>
+<%  if (start) { %>
 <div class="row justify-content-center align-items-center py-3">
-    <div class="col-6">
+<%  } %>
+    <div class="col-4">
         <iframe src=<%=gif.embed_url%> width="100%" height="270" frameborder="0" class="giphy-embed" allowfullscreen></iframe>
     </div>
+<%  if (end) { %>
 </div>
-<% })%>
+<%  } %>
+<% }%>
 
 <%- include("partials/footer") %>
