@@ -18,7 +18,10 @@ router.get("/", async (req, res) => {
             limit: 20
         }
         const response = await axios.get(`${gifsURL}/search`, { params });
-        res.render("index", { gifs: response.data, emotion: emotion, character: character });
+        const gifs = response.data.data.map(gif => {
+            return  { embed_url: gif.embed_url };
+        });
+        res.render("index", { gifs: gifs, emotion: emotion, character: character });
     } catch (err) {
         console.log(err);
         res.status(500).json({error: "Failed to load gifs"});
